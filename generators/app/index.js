@@ -16,6 +16,7 @@ const logMessage = require('./helpers/messages/_logMessage')
 const installCraftCMS = require('./modules/writings/craftCMS')
 const installCraftCMS3 = require('./modules/writings/craftCMS3')
 const installWordpress = require('./modules/writings/wordpress')
+const installLaravel = require('./modules/writings/laravel')
 
 // Package JSON
 const writePackageJSON = require('./modules/writings/package')
@@ -55,6 +56,7 @@ module.exports = class extends Generator {
         this.installCraftCMS = installCraftCMS.bind(this)
         this.installCraftCMS3 = installCraftCMS3.bind(this)
         this.installWordpress = installWordpress.bind(this)
+        this.installLaravel = installLaravel.bind(this)
 
         // Package JSON
         this.writePackageJSON = writePackageJSON.bind(this)
@@ -133,6 +135,17 @@ module.exports = class extends Generator {
                 console.error(e)
             }
         }
+
+        console.log(this.props.projectType)
+
+        // Install Laravel
+        if (this.props.projectType === 'laravel' && this.props.laravelInstall && this.commands.composer) {
+            try {
+                await this.installLaravel().download(this)
+            } catch (e) {
+                console.error(e)
+            }
+        }
     }
 
     // Writing
@@ -157,6 +170,22 @@ module.exports = class extends Generator {
             this.logMessage({message: 'Moving Craft Folders'});
             try {
                 await this.installCraftCMS3().writing(this)
+            } catch (e) {
+                console.error(e)
+            }
+        }
+
+        // Laravel
+        if (this.props.projectType === 'laravel') {
+            this.logMessage({message: 'Moving Laravel Folders'});
+            try {
+                await this.installLaravel().deleting(this)
+            } catch (e) {
+                console.error(e)
+            }
+
+            try {
+                await this.installLaravel().writing(this)
             } catch (e) {
                 console.error(e)
             }

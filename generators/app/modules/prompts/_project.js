@@ -92,6 +92,10 @@ Not a valid URL! Example: foobar.dev (HOSTNAME.TLD)${chalk.styles.red.close}`
                 value: 'craftCMS3'
             },
             {
+                name: 'Laravel',
+                value: 'laravel'
+            },
+            {
                 name: 'Prototyping',
                 value: 'prototyping'
             },

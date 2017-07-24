@@ -2,17 +2,17 @@
 const message = require('../../helpers/prompts/_message')
 const when = require('../../helpers/prompts/_when')
 
-const promptsCraftCMS3 = [
+const promptsLaravel = [
     {
-        when: when('craftCMS3'),
+        when: when('laravel'),
         type: 'confirm',
-        name: 'craftCMS3Install',
+        name: 'laravelInstall',
         message: message({
-            headline: 'Craft CMS 3 Installation',
-            description: 'Do you want to install Craft CMS 3 via Composer?'
+            headline: 'Laravel Installation',
+            description: 'Do you want to install Laravel via Composer?'
         }),
         default: true
     }
 ]
 
-module.exports = promptsCraftCMS3
+module.exports = promptsLaravel

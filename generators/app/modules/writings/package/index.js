@@ -27,6 +27,7 @@ const addDistPathsCraftCMS = require('../../package/_distPathsCraftCMS')
 const addDistPathsCraftCMS3 = require('../../package/_distPathsCraftCMS3')
 const addDistPathsPrototyping = require('../../package/_distPathsPrototyping')
 const addDistPathsWordpress = require('../../package/_distPathsWordpress')
+const addDistPathsLaravel = require('../../package/_distPathsLaravel')
 
 const writePackageJSON = () => {
     return {
@@ -54,6 +55,8 @@ const writePackageJSON = () => {
                     addDistPathsPrototyping({pkg})
                 } else if (context.props.projectType === 'wordpress') {
                     addDistPathsWordpress({pkg})
+                } else if (context.props.projectType === 'laravel') {
+                    addDistPathsLaravel({pkg})
                 }
 
                 // Files

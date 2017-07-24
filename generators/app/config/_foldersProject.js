@@ -5,7 +5,8 @@ module.exports = {
                 'craftCMS',
                 'craftCMS3',
                 'prototyping',
-                'wordpress'
+                'wordpress',
+                'laravel'
             ],
             src: '___src/assets/fonts/',
             dest: '___src/assets/fonts/'
@@ -15,7 +16,8 @@ module.exports = {
                 'craftCMS',
                 'craftCMS3',
                 'prototyping',
-                'wordpress'
+                'wordpress',
+                'laravel'
             ],
             src: '___src/assets/images/',
             dest: '___src/assets/images/'
@@ -68,6 +70,7 @@ module.exports = {
                 'craftCMS',
                 'craftCMS3',
                 'prototyping',
+                'laravel'
             ],
             src: '___src/scripts/',
             dest: 'scripts/'
@@ -77,7 +80,8 @@ module.exports = {
                 'craftCMS',
                 'craftCMS3',
                 'prototyping',
-                'wordpress'
+                'wordpress',
+                'laravel'
             ],
             src: 'images/',
             dest: 'images/'
@@ -87,7 +91,8 @@ module.exports = {
                 'craftCMS',
                 'craftCMS3',
                 'prototyping',
-                'wordpress'
+                'wordpress',
+                'laravel'
             ],
             src: 'docs/',
             dest: 'docs/'

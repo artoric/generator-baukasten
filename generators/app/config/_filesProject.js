@@ -125,6 +125,13 @@ module.exports = {
             ],
             src: '___src/_craftCMS3/redactor/custom.json',
             dest: '___dist/config/redactor/custom.json'
-        }
+        },
+        {
+            projectContext: [
+                'laravel'
+            ],
+            src: '___src/_laravel/.env',
+            dest: '___dist/.env'
+        },
     ]
 }
